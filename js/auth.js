@@ -19,13 +19,13 @@ async function logIn(event) {
         return;
     }
 
-    if(enteredPassword.length < 6){
+    if(enteredPassword.length < 3){
         alert("Password is weak");
         return;
     }
 
 
-    const fetchUrl = `http://localhost:5138/api/Users/LogIn`;
+    const fetchUrl = `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Users/LogIn`;
 
     const LogInData = {
         Email : enteredEmail,
@@ -64,13 +64,18 @@ async function logIn(event) {
 
 
 function MoveToSignUpPage(event){
+    event.preventDefault();
     const loginSection = document.getElementById('login-section');
     const signupSection = document.getElementById('signup-section');
-    const showSignupBtn = document.getElementById('show-signup'); 
-    const showLoginBtn = document.getElementById('show-login');
+    // const showSignupBtn = document.getElementById('show-signup'); 
+    // const showLoginBtn = document.getElementById('show-login');
+
+    loginSection.classList.add('hidden');
+    signupSection.classList.remove('hidden');
 
     // When click "Sign Up"  Hide Login, Show Sign Up
-    showSignupBtn.addEventListener('click', () => {
+    /*
+            showSignupBtn.addEventListener('click', () => {
         loginSection.classList.add('hidden');
         signupSection.classList.remove('hidden');
     });
@@ -80,7 +85,20 @@ function MoveToSignUpPage(event){
        signupSection.classList.add('hidden');
        loginSection.classList.remove('hidden');
     });
+    */
+   
 
+
+}
+
+function MoveToLoginPage(event) {
+    event.preventDefault();
+    
+    const loginSection = document.getElementById('login-section');
+    const signupSection = document.getElementById('signup-section');
+
+    signupSection.classList.add('hidden');
+    loginSection.classList.remove('hidden');
 }
 
 
@@ -99,7 +117,7 @@ async function SignUp(event) {
         alert("Password must be 7 charachter or more ")
     }
     
-    const fetchUrl = `http://localhost:5138/api/Users/SignUp`;
+    const fetchUrl = `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Users/SignUp`;
 
     //pack the data inside a json object to send in fetch to the backend
     const SignUpData = {

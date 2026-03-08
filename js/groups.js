@@ -3,7 +3,7 @@ async function JoinGroup(event){
 
     const enteredGroupNumber = document.getElementById('group-code-input').value;
 
-    const FetchUrl=  `http://localhost:5138/api/Users/JoinGroup`
+    const FetchUrl=  `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Users/JoinGroup`
 
     const GroupNumberData = {
         GroupNumber:enteredGroupNumber
@@ -40,7 +40,7 @@ async function JoinGroup(event){
 async function CreateNewGroupNumber(event){
     event.preventDefault();
 
-    const fetchUrl= `http://localhost:5138/api/Users/Create`
+    const fetchUrl= `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Users/Create`
 
      try{
 

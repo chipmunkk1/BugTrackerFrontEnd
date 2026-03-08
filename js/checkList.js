@@ -4,7 +4,7 @@ async function fetchAllSolvedBugs(){
     const GN = localStorage.getItem('GroupNumber');
     document.getElementById('display-group-code').innerHTML = GN ;
 
-    const fetchUrl=`http://localhost:5138/api/Bugs/getAllSolvedBugs`
+    const fetchUrl=`https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Bugs/getAllSolvedBugs`
 
     const GroupNum = {
         GroupNumber : GN

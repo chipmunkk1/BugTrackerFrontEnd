@@ -2,7 +2,7 @@ async function fetchAllBugs(){
     const GroupNum = localStorage.getItem('GroupNumber');
     document.getElementById('display-group-code').innerHTML = GroupNum ;
 
-    const fetchUrl = `http://localhost:5138/api/Bugs/getAllBugs`
+    const fetchUrl = `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Bugs/getAllBugs`
 
     
 
@@ -76,7 +76,7 @@ function LogOut(event){
 }
 
 async function solveBug(id){
-    const fetchUrl = `http://localhost:5138/api/Bugs/Solved/${id}`
+    const fetchUrl = `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Bugs/Solved/${id}`
 
     const response = await fetch( fetchUrl,{
     method:"PUT", 
@@ -99,7 +99,7 @@ function SolvedBugs(event){
 
 
 async function deleteBug(id){
-    const fetchUrl = `http://localhost:5138/api/Bugs/DeleteBug/${id}`
+    const fetchUrl = `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Bugs/DeleteBug/${id}`
 
     const response = await fetch( fetchUrl,{
     method:"DELETE", 
@@ -127,7 +127,7 @@ async function ReportBug(event){
         bug_group_number : CurrentGroupNumber
     }
 
-    const fetchUrl = `http://localhost:5138/api/Bugs/reportBug`
+    const fetchUrl = `https://bug-tracker-application-hkgggfgtg8bphpew.israelcentral-01.azurewebsites.net/api/Bugs/reportBug`
 
     const response = await fetch (fetchUrl,{
         method:"POST",
