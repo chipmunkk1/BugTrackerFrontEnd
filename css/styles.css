@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Deep dark background */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the background stretches all the way down */
+}
+
+/* A universal utility class to hide things instantly (like the modals or forms) */
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   2. AUTHENTICATION & GROUP PAGES (Centered Layouts)
+   ========================================================================== */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.auth-card {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.subtitle {
+    color: #a0a0a0;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   3. FORMS & INPUTS
+   ========================================================================== */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #cccccc;
+    font-weight: 500;
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #333333;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+/* This allows the textarea to only be resized vertically, not horizontally */
+.input-group textarea {
+    resize: vertical; 
+}
+
+/* The blue glow when you click into a text box to type */
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6; 
+}
+
+/* ==========================================================================
+   4. BUTTONS
+   ========================================================================== */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #444444;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. GROUPS PAGE EXTRAS (Dividers & Modals)
+   ========================================================================== */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: #666666;
+}
+
+.divider::before, 
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #333333;
+}
+
+.divider span {
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    max-width: 350px;
+}
+
+/* The styling for the randomly generated Group Code */
+.code-display {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 24px;
+    font-family: monospace;
+    letter-spacing: 4px;
+    border-radius: 8px;
+    border: 1px dashed #3b82f6;
+    color: #3b82f6;
+}
+
+/* ==========================================================================
+   6. MAIN BOARD & CHECKLIST LAYOUT
+   ========================================================================== */
+.top-nav {
+    background-color: #1e1e1e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+}
+
+.nav-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+.nav-center {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.nav-center strong {
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-btn {
+    width: auto;
+    margin-top: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+/* Creates the side-by-side layout for large screens */
+.board-container {
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: flex-start; /* Stops the form from stretching vertically */
+}
+
+.form-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.bugs-display-section {
+    flex: 2;
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.full-width {
+    flex: 1;
+}
+
+.bugs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   7. DYNAMIC BUG CARDS (Injected by JavaScript later!)
+   ========================================================================== */
+.bug-card {
+    background-color: #2a2a2a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s;
+}
+
+.bug-card:hover {
+    border-color: #444444;
+}
+
+.bug-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.bug-desc {
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.bug-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #333333;
+    font-size: 12px;
+    color: #888888;
+}
+
+.bug-actions {
+    display: flex;
+    gap: 10px;
+}

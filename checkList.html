@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Tracker - Solved Bugs</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <nav class="top-nav">
+        <div class="nav-brand">Bug Tracker</div>
+        
+        <div class="nav-center">
+            <span>Group Code: <strong id="display-group-code">Loading...</strong></span>
+        </div>
+        
+        <div class="nav-links">
+            <button type="button" class="btn-secondary nav-btn" id="back-to-board" onclick="ExitSolvedBugs(event)">Back to Board</button>
+            <button type="button" class="btn-danger nav-btn" id="logout-btn" onclick="LogOut(event)">Log Out</button>
+        </div>
+    </nav>
+
+    <div class="board-container single-column">
+        
+        <div class="bugs-display-section full-width">
+            <h2>✅ Solved Bugs Checklist</h2>
+            <p class="subtitle">A history of all the bugs your team has squashed.</p>
+            
+            <div id="solved-bugs-container" class="bugs-grid">
+                <p class="subtitle" id="loading-message">Fetching solved bugs...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/checkList.js"></script>
+</body>
+</html>

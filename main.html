@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Tracker - Main Board</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    
+    <nav class="top-nav">
+        <div class="nav-brand">Bug Tracker</div>
+        
+        <div class="nav-center">
+            <span>Group Code: <strong id="display-group-code">Loading...</strong></span>
+        </div>
+        
+        <div class="nav-links">
+            <button type="button" class="btn-secondary nav-btn" id="go-to-checklist" onclick="SolvedBugs(event)">Solved Bugs</button>
+            <button type="button" class="btn-danger nav-btn" id="logout-btn" onclick="LogOut(event)">Log Out</button>
+        </div>
+    </nav>
+
+    <div class="board-container">
+        
+        <div class="form-section auth-card">
+    <h2>Report a Bug</h2>
+    <form id="report-bug-form">
+        <!-- File Name -->
+        <div class="input-group">
+            <label for="file-name">File Name</label>
+            <input type="text" id="file-name" required placeholder="e.g. main.js">
+        </div>
+
+        <!-- Bug Title -->
+        <div class="input-group">
+            <label for="bug-title">Bug Title</label>
+            <input type="text" id="bug-title" required placeholder="e.g. Login button is broken">
+        </div>
+        
+        <!-- Bug Description -->
+        <div class="input-group">
+            <label for="bug-description">Description</label>
+            <textarea id="bug-description" rows="4" required placeholder="Explain what went wrong..."></textarea>
+        </div>
+
+        <!-- Bug Severity -->
+        <div class="input-group">
+            <label for="bug-severity">Severity (1-10)</label>
+            <input type="number" id="bug-severity" min="1" max="10" required placeholder="e.g. 5">
+        </div>
+        
+        <button type="submit" class="btn-primary" onclick="ReportBug(event)">Add Bug</button>
+    </form>
+</div>
+            </form>
+        </div>
+
+        <div class="bugs-display-section">
+            <h2>Active Bugs</h2>
+            
+            <div id="bugs-container" class="bugs-grid">
+                <p class="subtitle" id="loading-message">Fetching bugs...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

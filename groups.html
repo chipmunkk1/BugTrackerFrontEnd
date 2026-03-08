@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Tracker - Workspaces</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        
+        <div class="auth-card">
+            <h2>Your Workspace</h2>
+            <p class="subtitle">Join an existing project or start a new one</p>
+            
+            <form id="join-form">
+                <div class="input-group">
+                    <label for="group-code-input">Enter Group Code</label>
+                    <input type="text" id="group-code-input" required placeholder="e.g. A1B2C3D4E">
+                </div>
+                <button type="submit" class="btn-primary" onclick="JoinGroup(event)">Join Group</button>
+            </form>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <button type="button" id="create-group-btn" class="btn-secondary" onclick="CreateNewGroupNumber(event)">Create New Group</button>
+        </div>
+
+        <div id="success-modal" class="modal hidden">
+            <div class="modal-content auth-card">
+                <h2>Group Created!</h2>
+                <p class="subtitle">Share this code with your team:</p>
+                
+                <div class="code-display" id="new-group-code">
+                    ---------
+                </div>
+                
+                <button type="button" id="continue-to-board-btn" class="btn-primary">Go to Board</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/groups.js"></script>
+
+
+
+
+</body>
+</html>

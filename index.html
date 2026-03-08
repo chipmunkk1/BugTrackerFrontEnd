@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Tracker - Welcome</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        
+        <div id="login-section" class="auth-card">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Log in to your Bug Tracker</p>
+            
+            <form id="login-form" onsubmit="logIn(event)">
+                <div class="input-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required placeholder="Enter your email" maxlength="50">
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required placeholder="Enter your password" maxlength="50">
+                </div>
+                <button type="submit" class="btn-primary" onclick="logIn(event)">Log In</button>
+            </form>
+            
+            <p class="toggle-text">
+                Don't have an account? <button type="button" id="show-signup" class="btn-link" onclick="MoveToSignUpPage(event)">Sign Up</button>
+            </p>
+        </div>
+
+        <div id="signup-section" class="auth-card hidden">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join the Bug Tracker</p>
+            
+            <form id="signup-form">
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required placeholder="Choose an email" maxlength="50">
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required placeholder="Choose a password" maxlength="50">
+                </div>
+                <button type="submit" class="btn-primary" onclick="SignUp(event)">Sign Up</button>
+            </form>
+            
+            <p class="toggle-text">
+                Already have an account? <button type="button" id="show-login" class="btn-link">Log In</button>
+            </p>
+        </div>
+
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
